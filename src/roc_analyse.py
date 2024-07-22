@@ -113,7 +113,7 @@ def roc_analysis(lang):
         st.plotly_chart(fig)
 
         # Calculate and display AUC metric
-        st.subheader(f"AUC: {roc_auc:.4f}")
+        st.subheader(f":white_check_mark: AUC: {roc_auc:.4f}")
 
         # Find the optimal threshold using Youden's J statistic
         j_scores = tpr - fpr
@@ -156,13 +156,15 @@ def roc_analysis(lang):
         accuracy = (tp + tn) / (tp + tn + fp + fn)
         precision = tp / (tp + fp) if (tp + fp) > 0 else 0
         recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-        f1_score = 2 * (precision * current_sensitivity) / (precision + current_sensitivity) if (precision + current_sensitivity) > 0 else 0
+        f1_score = 2 * (precision * current_sensitivity) / \
+                       (precision + current_sensitivity) \
+            if (precision + current_sensitivity) > 0 else 0
 
         st.subheader(translations[lang]['additional_metrics'])
-        st.write(f"Accuracy: {accuracy:.4f}")
-        st.write(f"Precision: {precision:.4f}")
-        st.write(f"Recall: {recall:.4f}")
-        st.write(f"F1 Score: {f1_score:.4f}")
+        st.write(f":one:**Accuracy**: {accuracy:.4f}")
+        st.write(f":two:**Precision**: {precision:.4f}")
+        st.write(f":three:**Recall**: {recall:.4f}")
+        st.write(f":four: **F1 Score**: {f1_score:.4f}")
 
         # Visualize confusion matrix
         st.subheader(translations[lang]['cmatrix_visualization'])

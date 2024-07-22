@@ -1,10 +1,11 @@
 translations = {
     "Русский": {
-        "ROC_Analyse_btn": "ROC Анализ",
-        "User_Manual_btn": "Руководство пользователя",
-        "title": "Интерактивный сервис ROC-анализа",
+        "nav": "Навигация",
+        "ROC_Analyse_btn": ":chart_with_upwards_trend: ROC Анализ",
+        "User_Manual_btn": ":bulb: Руководство пользователя",
+        "title": ":chart_with_upwards_trend: Интерактивный сервис ROC-анализа",
         "description": "Это приложение выполняет ROC-анализ ваших"
-                       " данных бинарной классификации."
+                       " данных бинарной классификации. "
                        "Пожалуйста, загрузите файл CSV или Excel, содержащий "
                        "истинные метки и прогнозируемые вероятности.",
         "choose_file": "Выберите CSV или Excel файл",
@@ -17,15 +18,15 @@ translations = {
         "input_label_2": "Выберите стобцы с предсказанной вероятностью",
         "input_error_2": "Ошибка: Предсказанная вероятность должна быть"
         " в диапазоне от 0 до 1.",
-        "treshold_title": "Интерактивный выбор Порогового значения",
+        "treshold_title": ":scales: Интерактивный выбор Порогового значения",
         "treshold_select": "Выберите Пороговое значение",
         "current_treshold": "Выбранное Порогое значение",
         "sensitivity_treshold": "Чувствительность при выбранном Пороговом"
                                 " значении",
         "specificity_treshold": "Специфичность при текущем Пороговом значении",
-        "cmatrix_title": "Матрица Ошибок",
-        "additional_metrics": "Дополнительные Показатели",
-        "cmatrix_visualization": "Визуализация Матрицы Ошибок",
+        "cmatrix_title": ":chart: Матрица Ошибок",
+        "additional_metrics": ":straight_ruler: Дополнительные Показатели",
+        "cmatrix_visualization": ":skin-tone-2: Визуализация Матрицы Ошибок",
         "user_manual_title": "Руководство пользователя",
         "user_manual_text": """
                     Добро пожаловать в интерактивный сервис **ROCFlow**! Данное
@@ -89,9 +90,10 @@ translations = {
 
     },
     "English": {
-        "ROC_Analyse_btn": "ROC Analysis",
-        "User_Manual_btn": "User Manual",
-        "title": "Interactive ROC Analysis Service",
+        "nav": "Navigation",
+        "ROC_Analyse_btn": ":chart_with_upwards_trend: ROC Analysis",
+        "User_Manual_btn": ":bulb: User Manual",
+        "title": ":chart_with_upwards_trend: Interactive ROC Analysis Service",
         "description": "This app performs ROC analysis on your binary"
         " classification data. "
                        "Please upload a CSV or Excel file containing true"
@@ -105,14 +107,15 @@ translations = {
         "input_label_2": "Select the column with predicted probabilities",
         "input_error_2": "Error: Predicted probabilities should be between 0"
         " and 1.",
-        "treshold_title": "Interactive Threshold Selector",
+        "treshold_title": ":scales: Interactive Threshold Selector",
         "treshold_select": "Select a threshold",
         "current_treshold": "Current Threshold",
         "sensitivity_treshold": "Sensitivity at Current Threshold",
         "specificity_treshold": "Specificity at Current Threshold",
-        "cmatrix_title": "Confusion Matrix",
-        "additional_metrics": "Additional Metrics",
-        "cmatrix_visualization": "Confusion Matrix Visualization",
+        "cmatrix_title": ":chart: Confusion Matrix",
+        "additional_metrics": ":straight_ruler: Additional Metrics",
+        "cmatrix_visualization": ":skin-tone-2: Confusion Matrix"
+                                 " Visualization",
         "user_manual_title": "User Manual",
         "user_manual_text": """
                 Welcome to the Interactive ROC Analysis Service! This user

@@ -19,6 +19,8 @@ translations = {
         "input_error_2": "Ошибка: Предсказанная вероятность должна быть"
         " в диапазоне от 0 до 1.",
         "treshold_title": ":scales: Интерактивный выбор Порогового значения",
+        "specificity": "Специфичность",
+        "sensitivity": "Чувствительность",
         "treshold_select": "Выберите Пороговое значение",
         "current_treshold": "Выбранное Порогое значение",
         "sensitivity_treshold": "Чувствительность при выбранном Пороговом"
@@ -107,6 +109,8 @@ translations = {
         "input_label_2": "Select the column with predicted probabilities",
         "input_error_2": "Error: Predicted probabilities should be between 0"
         " and 1.",
+        "specificity": "Specificity",
+        "sensitivity": "Sensitivity",
         "treshold_title": ":scales: Interactive Threshold Selector",
         "treshold_select": "Select a threshold",
         "current_treshold": "Current Threshold",

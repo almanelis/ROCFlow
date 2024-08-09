@@ -7,7 +7,7 @@ import plotly.graph_objs as go
 from .LEXICON import translations
 
 
-def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds):
+def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, lang):
     fig = go.Figure()
 
     # Add ROC curve
@@ -27,8 +27,8 @@ def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds):
 
     fig.update_layout(
         title='Receiver Operating Characteristic (ROC) Curve',
-        xaxis_title='Specificity',
-        yaxis_title='Sensitivity',
+        xaxis_title=translations[lang]['specificity'],
+        yaxis_title=translations[lang]['sensitivity'],
         legend=dict(x=0.01, y=0.99, bgcolor='rgba(255, 255, 255, 0.5)'),
         width=1000,  # Increased width
         height=800   # Increased height
@@ -109,7 +109,7 @@ def roc_analysis(lang):
             return
 
         # Plot interactive ROC curve
-        fig = plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds)
+        fig = plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, lang)
         st.plotly_chart(fig)
 
         # Calculate and display AUC metric

@@ -12,7 +12,7 @@ def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, lang):
 
     # Add ROC curve
     fig.add_trace(go.Scatter(x=fpr, y=tpr,
-                             mode='lines',
+                             mode='lines+markers',
                              name=f'ROC curve (AUC = {roc_auc:.2f})',
                              hovertemplate='FPR: %{x:.3f}<br>TPR: %{y:.3f}'
                              '<br>Threshold: %{text:.3f}',
@@ -29,7 +29,7 @@ def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, lang):
         title='Receiver Operating Characteristic (ROC) Curve',
         xaxis_title=translations[lang]['specificity'],
         yaxis_title=translations[lang]['sensitivity'],
-        legend=dict(x=0.01, y=0.99, bgcolor='rgba(255, 255, 255, 0.5)'),
+        legend=dict(x=0.7, y=0.1, bgcolor='rgba(255, 255, 255, 0.5)'),
         width=1000,  # Increased width
         height=800   # Increased height
     )

@@ -26,7 +26,7 @@ translations = {
         "sensitivity_treshold": "Чувствительность при выбранном Пороговом"
                                 " значении",
         "specificity_treshold": "Специфичность при текущем Пороговом значении",
-        "cmatrix_title": ":chart: Матрица Ошибок",
+        "cmatrix_title": "🔢 Матрица Ошибок",
         "additional_metrics": ":straight_ruler: Дополнительные Показатели",
         "cmatrix_visualization": ":skin-tone-2: Визуализация Матрицы Ошибок",
         "user_manual_title": "Руководство пользователя",
@@ -116,7 +116,7 @@ translations = {
         "current_treshold": "Current Threshold",
         "sensitivity_treshold": "Sensitivity at Current Threshold",
         "specificity_treshold": "Specificity at Current Threshold",
-        "cmatrix_title": ":chart: Confusion Matrix",
+        "cmatrix_title": "🔢 Confusion Matrix",
         "additional_metrics": ":straight_ruler: Additional Metrics",
         "cmatrix_visualization": ":skin-tone-2: Confusion Matrix"
                                  " Visualization",

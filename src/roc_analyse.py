@@ -8,7 +8,11 @@ from .LEXICON import translations
 
 
 def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, lang):
-    fig = go.Figure()
+    fig = go.Figure(
+        layout=dict(
+            autosize=True
+        )
+    )
 
     # Add ROC curve
     fig.add_trace(go.Scatter(x=fpr, y=tpr,

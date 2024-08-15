@@ -24,7 +24,6 @@ def validate_input_data(y_true, y_pred, lang):
 
 
 def roc_analysis(lang):
-    # st.title("Interactive ROC Analysis Service")
     st.title(translations[lang]['title'])
 
     st.write(translations[lang]['description'])
@@ -53,15 +52,16 @@ def roc_analysis(lang):
         with col1:
             # Select columns for true labels and predicted probabilities
             true_label_col = st.selectbox(translations[lang]['input_label_1'],
-                                        df.columns)
+                                          df.columns)
             pred_prob_col = st.selectbox(translations[lang]['input_label_2'],
-                                        df.columns)
-            
+                                         df.columns)
+
         # Color peacker
         with col2:
-            # roc_curve_color = st.selectbox('Выберите цвет ROC кривой', [1, 2, 3])
-            roc_curve_color = st.color_picker('Выберите цвет ROC кривой', '#FD0202')
-            rand_cl_color = st.color_picker('Выберите цвет Random Classifier', '#001AFF')
+            roc_curve_color = st.color_picker('Выберите цвет ROC кривой',
+                                              '#FD0202')
+            rand_cl_color = st.color_picker('Выберите цвет Random Classifier',
+                                            '#001AFF')
 
         # Extract true labels and predicted probabilities
         y_true = df[true_label_col].values
@@ -86,7 +86,8 @@ def roc_analysis(lang):
             return
 
         # Plot interactive ROC curve
-        fig = plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, roc_curve_color, rand_cl_color)
+        fig = plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds,
+                                         roc_curve_color, rand_cl_color, lang)
         st.plotly_chart(fig)
 
         # Calculate and display AUC metric

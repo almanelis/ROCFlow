@@ -19,12 +19,14 @@ translations = {
         "input_error_2": "Ошибка: Предсказанная вероятность должна быть"
         " в диапазоне от 0 до 1.",
         "treshold_title": ":scales: Интерактивный выбор Порогового значения",
+        "specificity": "1 - Специфичность",
+        "sensitivity": "Чувствительность",
         "treshold_select": "Выберите Пороговое значение",
         "current_treshold": "Выбранное Порогое значение",
         "sensitivity_treshold": "Чувствительность при выбранном Пороговом"
                                 " значении",
         "specificity_treshold": "Специфичность при текущем Пороговом значении",
-        "cmatrix_title": ":chart: Матрица Ошибок",
+        "cmatrix_title": "🔢 Матрица Ошибок",
         "additional_metrics": ":straight_ruler: Дополнительные Показатели",
         "cmatrix_visualization": ":skin-tone-2: Визуализация Матрицы Ошибок",
         "user_manual_title": "Руководство пользователя",
@@ -107,12 +109,14 @@ translations = {
         "input_label_2": "Select the column with predicted probabilities",
         "input_error_2": "Error: Predicted probabilities should be between 0"
         " and 1.",
+        "specificity": "1 - Specificity",
+        "sensitivity": "Sensitivity",
         "treshold_title": ":scales: Interactive Threshold Selector",
         "treshold_select": "Select a threshold",
         "current_treshold": "Current Threshold",
         "sensitivity_treshold": "Sensitivity at Current Threshold",
         "specificity_treshold": "Specificity at Current Threshold",
-        "cmatrix_title": ":chart: Confusion Matrix",
+        "cmatrix_title": "🔢 Confusion Matrix",
         "additional_metrics": ":straight_ruler: Additional Metrics",
         "cmatrix_visualization": ":skin-tone-2: Confusion Matrix"
                                  " Visualization",

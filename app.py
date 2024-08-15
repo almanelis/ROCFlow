@@ -10,7 +10,7 @@ def main():
     session_state = SessionState()
 
     with st.sidebar:
-        st.title(':sparkles: ROCFlow')
+        st.title('🤖 ROCFlow')
         language = st.selectbox("Select Language", ["Русский", "English"])
         session_state.language = language
 
@@ -18,7 +18,7 @@ def main():
                              (translations[language]['ROC_Analyse_btn'],
                               translations[language]['User_Manual_btn']))
 
-        st.link_button(':magic_wand: almanelis',
+        st.link_button('🛠️almanelis',
                        'https://github.com/almanelis/')
 
     if add_radio == translations[language]['ROC_Analyse_btn']:

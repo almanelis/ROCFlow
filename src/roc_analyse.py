@@ -5,40 +5,7 @@ from sklearn.metrics import roc_curve, auc
 import plotly.graph_objs as go
 
 from .LEXICON import translations
-
-
-def plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds):
-    fig = go.Figure()
-
-    # Add ROC curve
-    fig.add_trace(go.Scatter(x=fpr, y=tpr,
-                             mode='lines',
-                             name=f'ROC curve (AUC = {roc_auc:.2f})',
-                             hovertemplate='FPR: %{x:.3f}<br>TPR: %{y:.3f}'
-                             '<br>Threshold: %{text:.3f}',
-                             text=thresholds,
-                             line=dict(color='red', width=2)))
-
-    # Add diagonal line
-    fig.add_trace(go.Scatter(x=[0, 1], y=[0, 1],
-                             mode='lines',
-                             name='Random Classifier',
-                             line=dict(color='blue', width=2, dash='dash')))
-
-    fig.update_layout(
-        title='Receiver Operating Characteristic (ROC) Curve',
-        xaxis_title='Specificity',
-        yaxis_title='Sensitivity',
-        legend=dict(x=0.01, y=0.99, bgcolor='rgba(255, 255, 255, 0.5)'),
-        width=1000,  # Increased width
-        height=800   # Increased height
-    )
-
-    fig.update_xaxes(range=[0, 1], constrain='domain')
-    fig.update_yaxes(range=[0, 1], constrain='domain', scaleanchor="x",
-                     scaleratio=1)
-
-    return fig
+from .plot_curve import plot_interactive_roc_curve
 
 
 def validate_input_data(y_true, y_pred, lang):
@@ -80,11 +47,21 @@ def roc_analysis(lang):
         st.write(translations[lang]['data_preview'])
         st.write(df.head())
 
-        # Select columns for true labels and predicted probabilities
-        true_label_col = st.selectbox(translations[lang]['input_label_1'],
-                                      df.columns)
-        pred_prob_col = st.selectbox(translations[lang]['input_label_2'],
-                                     df.columns)
+        col1, col2 = st.columns([2, 1])
+
+        # Select colums from file
+        with col1:
+            # Select columns for true labels and predicted probabilities
+            true_label_col = st.selectbox(translations[lang]['input_label_1'],
+                                        df.columns)
+            pred_prob_col = st.selectbox(translations[lang]['input_label_2'],
+                                        df.columns)
+            
+        # Color peacker
+        with col2:
+            # roc_curve_color = st.selectbox('Выберите цвет ROC кривой', [1, 2, 3])
+            roc_curve_color = st.color_picker('Выберите цвет ROC кривой', '#FD0202')
+            rand_cl_color = st.color_picker('Выберите цвет Random Classifier', '#001AFF')
 
         # Extract true labels and predicted probabilities
         y_true = df[true_label_col].values
@@ -109,7 +86,7 @@ def roc_analysis(lang):
             return
 
         # Plot interactive ROC curve
-        fig = plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds)
+        fig = plot_interactive_roc_curve(fpr, tpr, roc_auc, thresholds, roc_curve_color, rand_cl_color)
         st.plotly_chart(fig)
 
         # Calculate and display AUC metric

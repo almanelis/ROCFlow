@@ -59,7 +59,7 @@ def roc_analysis(lang):
 
         # Color peacker
         with col2:
-            roc_curve_color = st.color_picker(translations[lang] \ ['color_picker1'],
+            roc_curve_color = st.color_picker(translations[lang]['color_picker1'],
                                               '#FD0202')
             rand_cl_color = st.color_picker(translations[lang]['color_picker2'],
                                             '#001AFF')

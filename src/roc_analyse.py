@@ -2,10 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.metrics import roc_curve, auc
-import plotly.graph_objs as go
+import plotly.express as px
 
 from .LEXICON import translations
 from .plot_curve import plot_interactive_roc_curve
+from .plot_cm import plot_cm
 
 
 def validate_input_data(y_true, y_pred, lang):
@@ -58,9 +59,9 @@ def roc_analysis(lang):
 
         # Color peacker
         with col2:
-            roc_curve_color = st.color_picker('Выберите цвет ROC кривой',
+            roc_curve_color = st.color_picker(translations[lang] \ ['color_picker1'],
                                               '#FD0202')
-            rand_cl_color = st.color_picker('Выберите цвет Random Classifier',
+            rand_cl_color = st.color_picker(translations[lang]['color_picker2'],
                                             '#001AFF')
 
         # Extract true labels and predicted probabilities
@@ -146,20 +147,9 @@ def roc_analysis(lang):
 
         # Visualize confusion matrix
         st.subheader(translations[lang]['cmatrix_visualization'])
-        fig_cm = go.Figure(data=go.Heatmap(
-                    z=cm_df.values,
-                    x=cm_df.columns,
-                    y=cm_df.index,
-                    hoverongaps=False,
-                    texttemplate="%{z}",
-                    colorscale="darkmint"))
 
-        fig_cm.update_layout(
-            title="Confusion Matrix Heatmap",
-            xaxis_title="Predicted",
-            yaxis_title="Actual",
-            width=600,
-            height=500
-        )
+        named_colorscales = px.colors.named_colorscales()
+        pick_colorscales = st.selectbox(translations[lang]['color_picker3'],
+                                        named_colorscales)
 
-        st.plotly_chart(fig_cm)
+        plot_cm(cm_df, colorscale=pick_colorscales)

@@ -19,6 +19,9 @@ translations = {
         "input_error_2": "Ошибка: Предсказанная вероятность должна быть"
         " в диапазоне от 0 до 1.",
         "treshold_title": ":scales: Интерактивный выбор Порогового значения",
+        "color_picker1": "Выберите цвет ROC кривой",
+        "color_picker2": "Выберите цвет Random Classifier",
+        "color_picker3": "Выберите тему",
         "specificity": "1 - Специфичность",
         "sensitivity": "Чувствительность",
         "treshold_select": "Выберите Пороговое значение",
@@ -109,6 +112,9 @@ translations = {
         "input_label_2": "Select the column with predicted probabilities",
         "input_error_2": "Error: Predicted probabilities should be between 0"
         " and 1.",
+        "color_picker1": "Select color of the ROC curve",
+        "color_picker2": "Select color of the Random Classifier",
+        "color_picker3": "Select theme",
         "specificity": "1 - Specificity",
         "sensitivity": "Sensitivity",
         "treshold_title": ":scales: Interactive Threshold Selector",
